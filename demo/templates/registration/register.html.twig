@@ -1,0 +1,44 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Register{% endblock %}
+
+{% block body %}
+    <div class="flex w-full">
+        <div class="form-wrapper">
+            <div class="form">
+                <h1 class="mb-3 font-weight-normal text-2xl">Register</h1>
+
+                {{ form_errors(registrationForm) }}
+
+                {{ form_start(registrationForm) }}
+                    {{ form_row(registrationForm.email, {
+                        label: 'Email',
+                        attr: {
+                            class: 'w-full input input-bordered form-input'
+                        }
+                    }) }}
+                    {{ form_row(registrationForm.plainPassword, {
+                        label: 'Password',
+                        attr: {
+                            class: 'w-full input input-bordered form-input'
+                        }
+                    }) }}
+
+                    <div class="flex items-center">
+                        {{ form_row(registrationForm.agreeTerms, {
+                            label: 'Agree To Terms',
+                            label_attr: {class: 'label-text mr-5'},
+                            attr: {
+                                class: 'checkbox'
+                            }
+                        }) }}
+                    </div>
+
+                    <div class="flex justify-end w-full">
+                        <button type="submit" class="btn btn-primary">Register</button>
+                    </div>
+                {{ form_end(registrationForm) }}
+            </div>
+        </div>
+    </div>
+{% endblock %}

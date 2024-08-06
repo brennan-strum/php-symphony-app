@@ -1,0 +1,26 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Album Photo{% endblock %}
+
+{% block body %}
+    <div class="flex w-full">
+      <div class="image-form-wrapper">
+          <div class="form">
+              <h1 class="mb-3 font-weight-normal text-2xl">Photo</h1>
+
+              <img class="rounded" src="{{ image.url }}" />
+
+              <div>
+                {{ image.description }}
+              </div>
+
+              <div class="flex justify-end w-full">
+                <a class="btn btn-primary" href="/album/edit/{{ image.id }}">
+                    Edit
+                </a>
+            </div>
+
+            </div>
+        </div>
+    </div>
+{% endblock %}

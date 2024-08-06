@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html class="min-h-screen h-screen">
+    <head>
+        <meta charset="UTF-8">
+        <title>{% block title %}Welcome!{% endblock %}</title>
+        {% block stylesheets %}
+            <link rel="stylesheet" href="{{ asset('build/app.css') }}">
+        {% endblock %}
+
+        {% block javascripts %}
+            {{ encore_entry_script_tags('app') }}
+        {% endblock %}
+    </head>
+    <body class="min-h-screen bg-slate-800 text-gray-200">
+        {% block header %}
+            <header>
+                <nav class="flex items-center justify-between flex-wrap w-full px-5 py-10 bg-slate-900 text-gray-200 sticky">
+                    <div class="flex items-center">
+                        <h1 class="font-bold text-2xl mr-10">Photo Album | </h1>
+
+                        {% if app.user %}
+                            <div><a class="btn btn-accent" href="{{ path('album') }}">My Album</a></div>
+                        {% endif %}
+                    </div>
+
+                    <div class="flex flex-col text-right">
+                        {% if app.user %}
+                            <div>User: {{ app.user.userIdentifier }}</div>
+                            <div><a href="{{ path('app_logout') }}">Logout</a></div>
+                        {% else %}
+                            <div><a href="{{ path('app_login') }}">Login</a></div>
+                        {% endif %}
+                    </div>
+                </nav>
+            </header>
+        {% endblock %}
+        {% block body %}{% endblock %}
+    </body>
+</html>

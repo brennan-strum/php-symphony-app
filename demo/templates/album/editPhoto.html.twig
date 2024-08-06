@@ -1,0 +1,22 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Edit Album Photo{% endblock %}
+
+{% block body %}
+    <div class="flex w-full">
+      <div class="image-form-wrapper">
+          <div class="form">
+              <h1 class="mb-3 font-weight-normal text-2xl">Edit Photo</h1>
+              {{ form_start(form) }}
+
+                <img class="rounded" src="{{ image.url }}" />
+
+                {{ form_widget(form) }}
+                <div class="flex justify-end w-full">
+                    <button type="submit" class="btn btn-primary">Submit</button>
+                </div>
+              {{ form_end(form) }}
+            </div>
+        </div>
+    </div>
+{% endblock %}

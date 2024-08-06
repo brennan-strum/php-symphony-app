@@ -1,0 +1,28 @@
+.form-wrapper {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  height: calc(100vh - 112px);
+}
+
+.image-form-wrapper {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  margin-top: 20px;
+}
+
+.form {
+  width: 500px;
+  padding: 20px;
+}
+
+.form-input {
+  margin: 10px 0 20px 5px;
+}
+
+.form-description {
+  height: 300px;
+}
