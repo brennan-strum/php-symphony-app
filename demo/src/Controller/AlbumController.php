@@ -133,4 +133,15 @@ class AlbumController extends AbstractController
             'form' => $form->createView()
         ]);
     }
+
+    #[Route('/album/delete/{id}', methods: ['GET', 'DELETE'], name: 'delete_photo')]
+    public function deletePhoto($id): Response
+    {
+        $image = $this->imageRepository->find($id);
+
+        $this->em->remove($image);
+        $this->em->flush();
+
+        return $this->redirectToRoute('album');
+    }
 }

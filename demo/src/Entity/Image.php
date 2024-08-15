@@ -19,7 +19,7 @@ class Image
     #[ORM\ManyToOne(inversedBy: 'images')]
     private ?User $user = null;
 
-    #[ORM\Column(length: 255, nullable: true)]
+    #[ORM\Column(type: "text", length: 65535, nullable: true)]
     private ?string $description = null;
 
     public function getId(): ?int

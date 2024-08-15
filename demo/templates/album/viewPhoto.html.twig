@@ -4,22 +4,25 @@
 
 {% block body %}
     <div class="flex w-full">
-      <div class="image-form-wrapper">
-          <div class="form">
-              <h1 class="mb-3 font-weight-normal text-2xl">Photo</h1>
+        <div class="image-form-wrapper">
+            <div class="form">
+                <h1 class="mb-3 font-weight-normal text-2xl">Photo</h1>
 
-              <img class="rounded" src="{{ image.url }}" />
+                <img class="mb-3" class="rounded" src="{{ image.url }}" />
 
-              <div>
-                {{ image.description }}
-              </div>
+                <div class="mb-3">
+                    {{ image.description }}
+                </div>
 
-              <div class="flex justify-end w-full">
-                <a class="btn btn-primary" href="/album/edit/{{ image.id }}">
-                    Edit
-                </a>
-            </div>
+                <div class="flex justify-between w-full">
+                    <a class="btn btn-error" href="/album/delete/{{ image.id }}">
+                        Delete
+                    </a>
 
+                    <a class="btn btn-primary" href="/album/edit/{{ image.id }}">
+                        Edit
+                    </a>
+                </div>
             </div>
         </div>
     </div>
